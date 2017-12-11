@@ -34,18 +34,3 @@ Matrix<double> putDataIntoMatrix(std::string pathToFile) {
     return matrixWithData;
 }
 
-
-Matrix<double> scaleMatrixForNetwork(Matrix<double>* allValues, size_t row) {
-    Matrix<double> scaledMatrix(1, allValues->size2());
-    for (size_t i = 0; i < allValues->size2(); i++)
-        scaledMatrix(0, i) = (allValues->operator()(row, i) / 255.0 * .99) + .01;
-    scaledMatrix.removeRow(0);
-    return scaledMatrix;
-}
-
-void showNeuralNetworkResult(Matrix<double>& neuralNetworkResult) {
-    for (size_t i = 0; i < neuralNetworkResult.size1(); i++) {
-        for (size_t j = 0; j < neuralNetworkResult.size2(); j++)
-            std::cout << "Label: " << i << " ----> " << neuralNetworkResult(i, j) << std::endl;
-    }
-}
