@@ -18,12 +18,5 @@
 
 Matrix<double> putDataIntoMatrix(std::string pathToFile);
 
-Matrix<double> scaleMatrixForTesting(Matrix<double>* allValues);
-
-Matrix<double> scaleMatrixForNetwork(Matrix<double>* allValues, size_t row);
-
-Matrix<double> createTargets(Matrix<double>* allValues, size_t index);
-
-void showNeuralNetworkResult(Matrix<double>& neuralNetworkResult);
 
 #endif /* PutDataFromCsvInMatrix_hpp */
